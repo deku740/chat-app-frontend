@@ -34,8 +34,7 @@ const ChatPage = () => {
   const chatBoxRef = useRef(null);
   const [stompClient, setStompClient] = useState(null);
 
-  //page init:
-  //messages ko load karne honge
+
 
   useEffect(() => {
     async function loadMessages() {
@@ -61,7 +60,7 @@ const ChatPage = () => {
     }
   }, [messages]);
 
-  //stompClient ko init karne honge
+  //stompClient
   //subscribe
 
   useEffect(() => {
@@ -82,7 +81,7 @@ const ChatPage = () => {
 
           setMessages((prev) => [...prev, newMessage]);
 
-          //rest of the work after success receiving the message
+          
         });
       });
     };
@@ -91,7 +90,7 @@ const ChatPage = () => {
       connectWebSocket();
     }
 
-    //stomp client
+    
   }, [roomId]);
 
   //send message handle
@@ -114,7 +113,7 @@ const ChatPage = () => {
       setInput("");
     }
 
-    //
+
   };
 
   function handleLogout() {
